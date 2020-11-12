@@ -1,0 +1,7 @@
+<h2>add the description</h2>
+
+<%= simple_form_for [ @cocktail, @dose] do |f| %>
+  <%= f.input :description %>
+  <%= f.association :ingredient, label_method: :name, value_method: :id, include_blank: false  %>
+  <%= f.submit class: 'btn btn-success' %>
+<% end %>
