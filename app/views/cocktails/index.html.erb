@@ -1,13 +1,25 @@
 
-<div>
-  <h1>Cocktail Time!</h1>
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail_path(cocktail) do %>
-        <h2><%= cocktail.name %></h2>
+<div class="container">
+  <div class="header_home">
+    <h1>Welcome to your Cocktail bar!</h1>
+  </div>
+  <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-sm-6 col-lg-4" >
+          <%= link_to cocktail_path(cocktail) do %>
+            <div class="p-3 mb-2 bg-success text-white cocktail-card">
+              <h2><%= cocktail.name %></h2>
+            </div>
+          <% end %>
+      </div>
       <% end %>
-    </li>
-    <% end %>
-  </ul>
+  </div>
 </div>
+
+<div class="question text-center">
+  <h5><%= link_to "What do you want to sip?", new_cocktail_path %></h5>
+</div>
+
+
+
+

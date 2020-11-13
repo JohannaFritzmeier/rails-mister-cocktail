@@ -1,13 +1,23 @@
   <h1><%= @cocktail.name %></h1>
 
-  <h3>Description</h3>
-
-  <h3>Ingredients</h3>
-  <ul class="list-unstyled">
+  <h3><strong>Description</strong></h3>
+   <ul class="list-unstyled">
     <% @cocktail.doses.each do |dose| %>
     <li>
-      <strong><%= dose.ingredient.name %></strong>
       <%= dose.description %>
     </li>
     <% end %>
    </ul>
+
+
+  <h3><strong>Ingredients</strong></h3>
+  <ul class="list-unstyled">
+    <% @cocktail.doses.each do |dose| %>
+    <li>
+      <%= dose.ingredient.name %>
+    </li>
+    <% end %>
+   </ul>
+
+   <%= link_to "Back to Bar", cocktails_path %> |
+   <%= link_to 'Add description and ingredient', new_cocktail_dose_path(@cocktail) %>
